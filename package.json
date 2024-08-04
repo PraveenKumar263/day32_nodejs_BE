@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/PraveenKumar263/day32_nodejs_BE/issues"
   },
-  "homepage": "https://github.com/PraveenKumar263/day32_nodejs_BE#readme"
+  "homepage": "https://github.com/PraveenKumar263/day32_nodejs_BE#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
