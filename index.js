@@ -36,6 +36,7 @@ const mongoose = require('mongoose');
 
 // Import express module
 const express = require('express');
+const { configDotenv } = require('dotenv').config();
 
 // Create an express application
 const app = express();
@@ -67,7 +68,8 @@ app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}/`);
 })
 
-mongoose.connect('mongodb://localhost:27017')
+// Connect to mongodb with credentials, stored in dotenv file
+mongoose.connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("Connected to MongoDB");
   })
