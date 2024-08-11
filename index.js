@@ -31,6 +31,9 @@ const todos = [
   }
 ];
 
+// Import mongoose module
+const mongoose = require('mongoose');
+
 // Import express module
 const express = require('express');
 
@@ -63,3 +66,11 @@ app.post('/api/v1/todos', (request, response) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}/`);
 })
+
+mongoose.connect('mongodb://localhost:27017')
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB", error);
+  });
